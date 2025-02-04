@@ -16,11 +16,11 @@ import {
     ChartTooltipContent 
 } from "@/components/ui/chart"
 
-const formatNumber = (value: any) => {
+const formatNumber = (value: number) => {
     if(value >= 1000) {
         return `${(value / 1000).toFixed(0)}k`;
     }
-    return value;
+    return value.toString();
 }
 
 const chartConfig = {
