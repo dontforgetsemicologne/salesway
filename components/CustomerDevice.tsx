@@ -28,7 +28,13 @@ const chartConfig = {
     },
 } satisfies ChartConfig;
 
-export default function CustomerDevice({ chartData }: { chartData: any[] }) {
+interface ChartData {
+    date: Date;
+    webSales: number;
+    offlineSales: number;
+}
+
+export default function CustomerDevice({ chartData }: { chartData: ChartData[] }) {
     const formatYAxisTick = (value: number) => `${value/1000}k`;
     return(
         <ChartContainer className="h-30 w-full" config={chartConfig}

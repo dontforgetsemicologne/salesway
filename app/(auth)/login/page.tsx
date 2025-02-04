@@ -12,7 +12,7 @@ export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const { login, loading, isLoggedIn } = useAuth();
+    const { login, isLoggedIn } = useAuth();
     const router = useRouter();
 
     useEffect(() => {
@@ -51,6 +51,7 @@ export default function LoginPage() {
                         Sign in to your account to continue
                     </p>
                 </div>
+                {error && <div className="mb-4 text-red-600 text-center">{error}</div>} 
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div>
                         <Label htmlFor="username">Username</Label>

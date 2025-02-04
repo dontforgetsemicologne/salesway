@@ -31,7 +31,7 @@ export default function CustomerFeedback({ categories }: CustomerFeedbackProps) 
             <p className="text-xl font-semibold mb-3">{getSentiment()}</p>
         
             <div className="flex gap-0.5 mb-3">
-                {categories.map((category, index) => (
+                {categories.map((category) => (
                     <div
                         key={category.label}
                         className={`h-2 ${category.color} rounded-full`}

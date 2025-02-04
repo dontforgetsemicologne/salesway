@@ -34,7 +34,13 @@ const chartConfig = {
     },
 } satisfies ChartConfig;
 
-export default function ProductComparison({ chartData }: { chartData: any[] }) {
+interface ChartData {
+    month: string;
+    thisYear: number;
+    lastYear: number;
+}
+
+export default function ProductComparison({ chartData }: { chartData: ChartData[] }) {
   return (
     <ChartContainer config={chartConfig} className="h-60 w-11/12">
         <BarChart

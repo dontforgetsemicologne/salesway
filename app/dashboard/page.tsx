@@ -41,44 +41,44 @@ import CustomerFeedback from "@/components/CustomerFeedback";
 import { fetchComponent } from "@/lib/actions";
 
 export default function DashboardPage() {
-    const { isLoggedIn, logout } = useAuth();
+    const { isLoggedIn } = useAuth();
     const router = useRouter();
 
     useEffect(() => {
         if(!isLoggedIn) {
             router.push('/login');
         }
-    }, [isLoggedIn]);
+    }, [isLoggedIn, router]);
 
-    const { data: Component1, isLoading: Loading1, error: Error1 } = useQuery({
+    const { data: Component1 } = useQuery({
         queryKey: ['Component', 1],
         queryFn: () => fetchComponentData(1),
         enabled: isLoggedIn,
     });
 
-    const { data: Component2, isLoading: Loading2, error: Error2 } = useQuery({
+    const { data: Component2 } = useQuery({
         queryKey: ['Component', 2],
         queryFn: () => fetchComponent('sales'),
     });
     
-    const { data: Component3, isLoading: Loading3, error: Error3 } = useQuery({
+    const { data: Component3 } = useQuery({
         queryKey: ['Component', 3],
         queryFn: () => fetchComponentData(3),
         enabled: isLoggedIn,
     });
 
-    const { data: Component4, isLoading: Loading4, error: Error4 } = useQuery({
+    const { data: Component4 } = useQuery({
         queryKey: ['Component', 4],
         queryFn: () => fetchComponent('4'),
     });
 
-    const { data: Component5, isLoading: Loading5, error: Error5 } = useQuery({
+    const { data: Component5 } = useQuery({
         queryKey: ['Component', 5],
         queryFn: () => fetchComponentData(5),
         enabled: isLoggedIn,
     });
 
-    const { data: Component6, isLoading: Loading6, error: Error6 } = useQuery({
+    const { data: Component6 } = useQuery({
         queryKey: ['Component', 6],
         queryFn: () => fetchComponent('6'),
     });
